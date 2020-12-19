@@ -28,7 +28,7 @@ export default {};
   height: 70px;
   position: fixed;
   z-index: 30;
-  background: rgba(255, 254, 177, 0.986);
+  background: rgba(255, 254, 177, 0.7);
 }
 .header-content {
   height: 100%;
