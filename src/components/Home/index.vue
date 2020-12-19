@@ -29,18 +29,24 @@
       <div class="title">
         <span>BLOG</span>
       </div>
-      <div class="blog-area"></div>
+    </div>
+
+    <div class="blog-area">
+      <blog-swiper />
     </div>
     <!-- :用 props方法傳遞 value -->
-    <modal v-model="showProductBool" :rowData="rowData" />
+    <product-modal v-model="showProductBool" :rowData="rowData" />
   </div>
 </template>
 
 <script>
-import Modal from '@/components/Modal';
+import ProductModal from '@/components/Home/ProductModal';
+import BlogSwiper from '@/components/Home/BlogSwiper';
+
 export default {
   components: {
-    Modal,
+    ProductModal,
+    BlogSwiper,
   },
   data() {
     return {
@@ -106,6 +112,7 @@ export default {
     border-bottom: 4px solid #b0d8bf;
   }
 }
+
 .product-area {
   display: flex;
   justify-content: center;
@@ -140,6 +147,13 @@ export default {
       }
     }
   }
+}
+
+// blog-area
+.blog-area {
+  width: 100%;
+  background: #b0d8bf;
+  cursor: grab;
 }
 
 .pic-1,
