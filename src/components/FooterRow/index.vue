@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <div>footer</div>
+    <!-- <div>footer</div> -->
   </div>
 </template>
 
@@ -8,4 +8,10 @@
 export default {};
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.footer {
+  div {
+    color: #f00;
+  }
+}
+</style>
