@@ -1,5 +1,5 @@
 <template>
-  <b-modal v-model="show" id="modal-center">
+  <b-modal v-model="show" id="modal-center" :hide-footer="true" :title="rowData.title" title-class="title">
     <!-- 這邊的 v-if為除錯用 都有值的時候才會渲染畫面 -->
     <div class="img" v-if="rowData && rowData.num">
       <img class="big-pic" :src="require(`@/assets/img/home/pro-${proData.num}-${proNum}.jpg`)" />
@@ -91,6 +91,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.title {
+  color: #006737;
+}
+
 .img {
   width: 18rem;
   display: flex;

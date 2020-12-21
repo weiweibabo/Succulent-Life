@@ -3,13 +3,13 @@
     <div class="header-box">
       <div class="header-content">
         <div class="header-logo">
-          <img :src="require('@/assets/img/header/logo-green.png')" />
+          <router-link to="/">
+            <img :src="require('@/assets/img/header/logo-white.png')" />
+          </router-link>
         </div>
         <div class="header-link">
           <router-link to="/proudct"><div class="pages">PRODUCT</div></router-link>
-          <router-link to="/blog"><div class="pages">BLOG</div></router-link>
           <router-link to="/workshop"><div class="pages">WORKSHOP</div></router-link>
-          <router-link to="/event"><div class="pages">EVENT</div></router-link>
           <router-link to="/about"><div class="pages">ABOUT</div></router-link>
         </div>
       </div>
@@ -28,17 +28,18 @@ export default {};
   height: 70px;
   position: fixed;
   z-index: 30;
-  background: rgba(255, 254, 177, 0.7);
+  background: #006737;
 }
 .header-content {
   height: 100%;
-  margin: 0 1rem;
+  margin: 0 2.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 // logo
 .header-logo {
+  margin-left: 1rem;
   img {
     height: 3.5rem;
     width: 3.5rem;
@@ -47,9 +48,10 @@ export default {};
 // nav-link
 .header-link {
   display: flex;
+
   .pages {
     margin: 1.25rem;
-    color: #006737;
+    color: #fff;
     font-weight: 600;
     border-bottom: 2px solid transparent;
     &:hover {
