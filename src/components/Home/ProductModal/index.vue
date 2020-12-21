@@ -1,8 +1,28 @@
 <template>
-  <b-modal v-model="show" id="modal-center" centered title="Product Introduction">
+  <b-modal v-model="show" id="modal-center">
     <!-- 這邊的 v-if為除錯用 都有值的時候才會渲染畫面 -->
     <div class="img" v-if="rowData && rowData.num">
-      <img :src="require(`@/assets/img/home/product-${rowData.num}.jpg`)" />
+      <img class="big-pic" :src="require(`@/assets/img/home/pro-${proData.num}-${proNum}.jpg`)" />
+
+      <div class="img-wrap">
+        <div class="img-row" v-for="(items, index) in proArr" :key="index" @click="demo(items)">
+          <img :src="require(`@/assets/img/home/pro-${proData.num}-${index + 1}.jpg`)" />
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="pro-title">PRODUCT DESCIPTION</p>
+      <div class="desciption">
+        <P
+          >Fuji Hill-Two-color one-inch pot,miniature cement cactus pot (including cactus/succulent). Tailor-made homes
+          exclusive to one-inch pots. Placed on the desk,counter,healing basin.</P
+        >
+        <p>
+          Hue : Two-tone cement/water blue Mount Fuji<br />
+          Material : cement, sand, white cement/water blue pigment<br />
+          Size : 4 x 4 x 7 cm
+        </p>
+      </div>
     </div>
   </b-modal>
 </template>
@@ -24,6 +44,12 @@ export default {
   data() {
     return {
       show: false,
+
+      proData: {},
+      // init 1
+      proNum: 1,
+
+      proArr: [{ data: { num: 1 } }, { data: { num: 2 } }, { data: { num: 3 } }],
     };
   },
 
@@ -35,6 +61,11 @@ export default {
         const vm = this;
 
         vm.show = val;
+
+        // show = true時, rowData 賦值 proData
+        if (val) {
+          vm.proData = vm.rowData;
+        }
       },
     },
     show(val) {
@@ -46,15 +77,63 @@ export default {
       vm.$emit('input', val);
     },
   },
+
+  methods: {
+    //product detail demo
+    demo(items) {
+      const vm = this;
+
+      // 把 items.data的num 賦值給 proNum
+      vm.proNum = items.data.num;
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .img {
-  width: 20rem;
+  width: 18rem;
+  display: flex;
+  margin-bottom: 1rem;
+  margin-left: 3rem;
 
-  img {
+  .big-pic {
     width: 100%;
+  }
+
+  .img-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .img-row {
+      width: 5rem;
+      margin: 0 1rem;
+      img {
+        width: 100%;
+        padding-bottom: 3.5px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.modal-footer {
+  justify-content: start;
+  display: flex;
+  padding: 1rem 2.75rem 0rem 2.75rem;
+
+  .pro-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #006737;
+  }
+
+  .desciption {
+    color: rgb(116, 116, 116);
+    line-height: 1.2;
+    p {
+      margin-top: 1rem;
+    }
   }
 }
 </style>

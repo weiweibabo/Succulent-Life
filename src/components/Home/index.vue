@@ -18,7 +18,7 @@
           :class="[{ 'pic-margin': item.class === 'pic-5' || item.class === 'pic-8' }]"
         >
           <div class="pic" :class="item.class" @click="openProduct(item)">
-            <img :src="require(`@/assets/img/home/product-${index + 1}.jpg`)" />
+            <img :src="require(`@/assets/img/home/pro-${index + 1}-1.jpg`)" />
             <div class="viewmore">
               <span>VIEW MORE</span>
             </div>
@@ -108,7 +108,7 @@ export default {
       rowData: {},
 
       imgArr: [
-        { class: 'pic-1', data: { num: 1 }, title: ['succulents001'] },
+        { class: 'pic-1', data: { num: 1 } },
         { class: 'pic-2', data: { num: 2 } },
         { class: 'pic-3', data: { num: 3 } },
         { class: 'pic-4', data: { num: 4 } },
@@ -215,6 +215,7 @@ export default {
       display: flex;
       position: relative;
       font-size: 0px;
+      cursor: pointer;
       &:hover {
         font-size: 20px;
       }
@@ -232,7 +233,6 @@ export default {
         top: 48%;
         left: 35%;
         opacity: 1;
-        text-decoration: none;
         color: #fff;
       }
     }
