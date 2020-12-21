@@ -1,9 +1,18 @@
 <template>
-  <div></div>
+  <div>
+    <div class="workshop">
+      <Carousel />
+    </div>
+  </div>
 </template>
 
 <script>
-export default {};
+import Carousel from '@/components/Workshop/Carousel';
+export default {
+  components: {
+    Carousel,
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>
