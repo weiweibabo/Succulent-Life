@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="footer-box">
       <div class="logo-big">
-        <img :src="require('@/assets/img/footer/logo-white.png')" />
+        <img :src="require('@/assets/img/footer/logo-white.png')" class="web" />
       </div>
 
       <div class="footer-info">
@@ -26,8 +26,8 @@
         </div>
       </div>
 
-      <div class="location">
-        <div>
+      <div class="location ">
+        <div class="web">
           <p class="title-s">• LOCATION：</p>
           <p class="gray">2375 130TH AVE NE #100, BELLEVUE, WA 98005, UNITED STATES</p>
           <P class="title-s">• OPENING HOURS：</P>
@@ -37,8 +37,11 @@
       </div>
     </div>
 
-    <div class="c-area">
+    <div class="c-area web">
       <p>© COPYRIGHTS 2020 SUCCUCENTS & LIFE. All RIGHTS RESERVED.</p>
+    </div>
+    <div class="c-area phone">
+      <p>© COPYRIGHTS 2020 SUCCUCENTS & LIFE.</p>
     </div>
   </div>
 
@@ -83,13 +86,13 @@ export default {};
           flex-direction: column;
           align-items: flex-start;
           justify-content: center;
-          margin: 0.6rem 0.8rem 0 1.07rem;
+          margin: 1.5rem 0.8rem 0 1.07rem;
 
           span {
             text-decoration: none;
             color: #fff;
             font-size: 0.9rem;
-            margin: 0.6rem;
+            margin: 0.3rem 0;
           }
         }
       }
@@ -134,6 +137,21 @@ export default {};
     padding: 0.6rem;
     text-align: center;
     font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .phone {
+    display: none;
+  }
+}
+
+@media screen and(max-width:767px) {
+  .web {
+    display: none;
+  }
+  .info-area {
+    justify-content: center;
   }
 }
 </style>
