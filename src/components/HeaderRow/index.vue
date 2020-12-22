@@ -22,40 +22,45 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-// nav-bar
-.header-box {
-  width: 100%;
-  height: 70px;
-  position: fixed;
-  z-index: 30;
-  background: #006737;
-}
-.header-content {
-  height: 100%;
-  margin: 0 2.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-// logo
-.header-logo {
-  margin-left: 1rem;
-  img {
-    height: 3.5rem;
-    width: 3.5rem;
-  }
-}
-// nav-link
-.header-link {
-  display: flex;
+.header {
+  // nav-bar
+  .header-box {
+    width: 100%;
+    height: 70px;
+    position: fixed;
+    z-index: 30;
+    background: #006737;
 
-  .pages {
-    margin: 1.25rem;
-    color: #fff;
-    font-weight: 600;
-    border-bottom: 2px solid transparent;
-    &:hover {
-      border-bottom: 2px solid #b0d8bf;
+    .header-content {
+      height: 100%;
+      margin: 0 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      // logo
+      .header-logo {
+        margin-left: 1rem;
+        img {
+          height: 3.5rem;
+          width: 3.5rem;
+        }
+      }
+
+      // nav-link
+      .header-link {
+        display: flex;
+
+        .pages {
+          margin: 1.25rem;
+          color: #fff;
+          font-weight: 600;
+          border-bottom: 2px solid transparent;
+          &:hover {
+            border-bottom: 2px solid #b0d8bf;
+          }
+        }
+      }
     }
   }
 }

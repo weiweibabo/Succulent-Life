@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 
 import Home from '../components/Home'
 import Workshop from '../components/Workshop';
+import About from '../components/About';
 
 Vue.use(VueRouter);
 
@@ -19,5 +20,10 @@ export default new VueRouter({
       name: 'Workshop', 
       component: Workshop,
     },
+    {
+      path: '/About',
+      name: 'About ',
+      component: About,
+    }
   ],
 });

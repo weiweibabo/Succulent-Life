@@ -55,9 +55,10 @@
         </div>
       </div>
       <div class="btn-area">
-        <div class="btn">
-          <p>VIEW MORE</p>
-        </div>
+        <button class="more-btn" @click="showMore = !showMore">
+          <p v-if="showMore">VIEW MORE</p>
+          <p v-else>PICK UP</p>
+        </button>
       </div>
     </div>
 
@@ -77,6 +78,8 @@ export default {
 
   data() {
     return {
+      showMore: true,
+
       classArr: [
         { title: 'HOUSE OF GLASS MOSAIC', date: 'Friday, October 09, 2020', time: '6:00 PM to 8:00 PM' },
         { title: 'MINI SUCCSENTS SCENE', date: 'Sunday, October 17, 2020', time: '2:00 PM to 4:00 PM' },
@@ -93,6 +96,11 @@ export default {
   },
 
   methods: {
+    // view-more-btn
+    // show() {
+    //   showMore = true;
+    // },
+
     // scrollTop
     yyy() {
       let scrollTop = document.documentElement.scrollTop;
@@ -207,8 +215,11 @@ export default {
 
   //btn-area
   .btn-area {
-    margin: 0 auto;
-    .btn {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+    .more-btn {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -220,6 +231,7 @@ export default {
         border: 0.125rem solid #006737;
         padding: 0.7rem 1rem;
         border-radius: 0.3rem;
+        margin: 0;
 
         &:hover {
           color: #006737;
