@@ -7,14 +7,16 @@
       </div>
 
       <div class="story-area">
-        <div class="flower">
-          <img class="flower-fadein" :src="require('@/assets/img/about/flower circle.png')" />
-          <div class="story">
-            <p>
-              SUCCUENTS & LIFE <br />IS A PLACE<br />
-              WHERE ART AND NATURE<br />
-              COME TOGETHER
-            </p>
+        <div>
+          <div class="flower">
+            <img class="flower-fadein" :src="require('@/assets/img/about/flower circle.png')" />
+            <div class="story">
+              <p>
+                SUCCUENTS & LIFE <br />IS A PLACE<br />
+                WHERE ART AND NATURE<br />
+                COME TOGETHER
+              </p>
+            </div>
           </div>
         </div>
         <div class="text-area">
@@ -145,7 +147,9 @@ export default {
   mounted() {
     window.addEventListener('scroll', this.yyy, true);
   },
-
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.yyy);
+  },
   methods: {
     // scrollTop
     yyy() {
@@ -223,7 +227,7 @@ export default {
 
       .flower {
         position: relative;
-        width: 37.5%;
+        width: 28rem;
 
         .flower-fadein {
           animation-delay: 3s;
@@ -274,7 +278,7 @@ export default {
     // information-area
 
     .info-area {
-      margin: 3rem 0;
+      margin: 3rem 2rem;
       display: flex;
       justify-content: center;
 
@@ -436,14 +440,9 @@ export default {
         align-items: center;
 
         .flower {
-          width: 90%;
-
+          width: 25rem;
           .story {
-            left: 11rem;
-
-            p {
-              font-size: 1.05rem;
-            }
+            left: 10rem;
           }
         }
 
@@ -472,6 +471,8 @@ export default {
         .map {
           iframe {
             margin-top: 1rem;
+            width: 20rem;
+            height: 15rem;
           }
         }
       }
@@ -481,6 +482,27 @@ export default {
 
         .contact {
           margin: 0 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width:414px) {
+  .web {
+    display: none !important;
+  }
+  .about {
+    .about-box {
+      .story-area {
+        .flower {
+          width: 22rem;
+          .story {
+            left: 9rem;
+            p {
+              font-size: 1rem;
+            }
+          }
         }
       }
     }

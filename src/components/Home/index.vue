@@ -65,7 +65,7 @@
           Our succulent specialist brings everything your group needs to create beautiful, professional looking
           arrangements.
         </p>
-        <p class="web">
+        <p>
           We are there to walk your group through the planting process step by step. The host provides a planting area
           for the class and tables, then just leave the rest up to us !
         </p>
