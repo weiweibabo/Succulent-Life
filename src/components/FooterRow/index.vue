@@ -1,8 +1,8 @@
 <template>
   <div class="footer">
     <div class="footer-box">
-      <div class="logo-big">
-        <img :src="require('@/assets/img/footer/logo-white.png')" class="web" />
+      <div class="logo-big web">
+        <img :src="require('@/assets/img/footer/logo-white.png')" />
       </div>
 
       <div class="footer-info">
@@ -26,8 +26,8 @@
         </div>
       </div>
 
-      <div class="location ">
-        <div class="web">
+      <div class="location web">
+        <div>
           <p class="title-s">• LOCATION：</p>
           <p class="gray">2375 130TH AVE NE #100, BELLEVUE, WA 98005, UNITED STATES</p>
           <P class="title-s">• OPENING HOURS：</P>
@@ -142,13 +142,13 @@ export default {};
 
 @media (min-width: 768px) {
   .phone {
-    display: none;
+    display: none !important;
   }
 }
 
 @media screen and(max-width:767px) {
   .web {
-    display: none;
+    display: none !important;
   }
   .info-area {
     justify-content: center;
