@@ -31,13 +31,25 @@
           <div>
             <ul>
               <li>
-                <router-link to="/proudct"><div class="pages">PRODUCT</div></router-link>
+                <router-link to="/proudct">
+                  <div class="pages">
+                    PRODUCT
+                  </div>
+                </router-link>
               </li>
               <li>
-                <router-link to="/workshop"><div class="pages">WORKSHOP</div></router-link>
+                <router-link to="/workshop">
+                  <div class="pages">
+                    WORKSHOP
+                  </div>
+                </router-link>
               </li>
               <li>
-                <router-link to="/about"><div class="pages">ABOUT</div></router-link>
+                <router-link to="/about">
+                  <div class="pages">
+                    ABOUT
+                  </div>
+                </router-link>
               </li>
             </ul>
           </div>

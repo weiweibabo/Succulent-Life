@@ -12,7 +12,7 @@
       </div>
       <div class="product-area">
         <div
-          class="product-box"
+          class="product-box web"
           v-for="(item, index) in imgArr"
           :key="index"
           :class="[{ 'pic-margin': item.class === 'pic-5' || item.class === 'pic-8' }]"
@@ -22,6 +22,13 @@
             <div class="viewmore">
               <span>VIEW MORE</span>
             </div>
+          </div>
+        </div>
+        <div class="product-box phone">
+          <div class="pic ">
+            <img :src="require(`@/assets/img/home/pro-2-1.jpg`)" />
+            <img :src="require(`@/assets/img/home/pro-5-1.jpg`)" />
+            <img :src="require(`@/assets/img/home/pro-8-1.jpg`)" />
           </div>
         </div>
       </div>
@@ -42,8 +49,8 @@
     <!-- workshop  -->
     <div class="main-area workshop-area">
       <div class="box-1 ">
-        <div class="text">
-          <div class="text-area">
+        <div class="text ">
+          <div class="text-area text-phone">
             <p>HAVE FUN</p>
             <p>WITH</p>
             <p>SUCCULENTS</p>
@@ -63,8 +70,8 @@
           for the class and tables, then just leave the rest up to us !
         </p>
       </div>
-      <div class="box-2 web">
-        <div class="cactus">
+      <div class="box-2">
+        <div class="cactus cactus-phone">
           <img :src="require('@/assets/img/home/cactus.png')" />
           <div class="btn">
             <p>GET STARTED</p>
@@ -76,7 +83,7 @@
 
     <div class="main-area workshop-pic">
       <div class="pic-area">
-        <img :src="require('@/assets/img/home/workshop-1.jpg')" />
+        <img :src="require('@/assets/img/home/workshop-1.jpg')" class="web" />
         <img :src="require('@/assets/img/home/workshop-2.jpg')" />
         <img :src="require('@/assets/img/home/workshop-3.jpg')" />
         <img :src="require('@/assets/img/home/workshop-4.jpg')" />
@@ -266,14 +273,14 @@ export default {
         font-weight: 600;
         color: #006737;
         margin-top: 4.375rem;
-        transform: translate(5rem, 6.25rem);
+        transform: translate(5rem, 7.25rem);
         text-align: center;
       }
     }
     // scroll-event
     .text.move-up {
       transition: 0.8s ease-out;
-      transform: translateY(-6.25rem);
+      transform: translateY(-7.5rem);
     }
 
     .box-circle-1 {
@@ -415,5 +422,80 @@ export default {
 
 .pic-margin {
   margin-top: 1.125rem;
+}
+
+@media (min-width: 768px) {
+  .phone {
+    display: none;
+  }
+}
+
+@media screen and(max-width:767px) {
+  .web {
+    display: none !important;
+  }
+
+  .home {
+    .banner {
+      margin-top: 30px;
+    }
+
+    // product-area
+    .product-area {
+      .product-box {
+        .pic {
+          display: flex;
+          flex-direction: column;
+          padding: 1rem;
+          img {
+            margin: 0.6rem 0;
+          }
+        }
+      }
+    }
+    // workshop-area
+    .workshop-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .box-1 {
+        left: -1rem;
+      }
+
+      .content {
+        width: 100%;
+        margin-top: 8rem;
+        margin-left: 0;
+        padding: 0 2.3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .box-2 {
+        left: -8rem;
+        top: 4rem;
+        .cactus {
+          img {
+            width: 14.37rem;
+            margin-top: 9rem;
+            margin-left: 4rem;
+          }
+        }
+      }
+    }
+
+    // last-section
+    .workshop-pic {
+      .pic-area {
+        margin-top: 20rem;
+        img {
+          width: 30%;
+          margin: 0.2rem;
+        }
+      }
+    }
+  }
 }
 </style>

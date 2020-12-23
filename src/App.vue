@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <header-row />
+    <header-row @ham="ham" />
     <router-view />
     <footer-row />
   </div>
@@ -15,6 +15,11 @@ export default {
   components: {
     HeaderRow,
     FooterRow,
+  },
+  methods: {
+    ham(e) {
+      console.log(e);
+    },
   },
 };
 </script>

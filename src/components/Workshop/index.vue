@@ -75,7 +75,6 @@ export default {
   components: {
     Carousel,
   },
-
   data() {
     return {
       showMore: true,
@@ -90,11 +89,12 @@ export default {
       ],
     };
   },
-
   mounted() {
     window.addEventListener('scroll', this.yyy, true);
   },
-
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.yyy);
+  },
   methods: {
     // view-more-btn
     // show() {

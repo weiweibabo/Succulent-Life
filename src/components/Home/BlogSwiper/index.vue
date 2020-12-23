@@ -20,6 +20,7 @@ export default {
       // swiper
       swiperOption: {
         slidesPerView: 3,
+        loop: true,
         // spaceBetween: 25,
         pagination: {
           el: '.swiper-pagination',
