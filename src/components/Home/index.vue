@@ -127,9 +127,11 @@ export default {
       ],
     };
   },
-
   mounted() {
     window.addEventListener('scroll', this.yyy, true);
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.yyy);
   },
 
   methods: {

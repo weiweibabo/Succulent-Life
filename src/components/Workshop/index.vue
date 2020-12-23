@@ -7,11 +7,12 @@
     <div class="main-area">
       <!--workshop introduction -->
       <div class="title">
-        <span>GET INTERACTIVE WITH SUCCULENT WORKSHOPS</span>
+        <span class="web">GET INTERACTIVE WITH SUCCULENT WORKSHOPS</span>
+        <span class="phone">WORKSHOPS</span>
       </div>
       <div class="workshop-content">
         <div class="text-area">
-          <div class="title-1 web">
+          <div class="title-1">
             <h4>OUR WORKSHOPS ARE GREAT FOR：</h4>
           </div>
 
@@ -30,7 +31,7 @@
               <li>and more!</li>
             </ul>
           </div>
-          <div>
+          <div class="word-box">
             <p class="word">
               We will happily tailor the experience to fit your theme, environment or time constraints.
             </p>
@@ -255,5 +256,51 @@ export default {
 .fix-btn.show {
   transition: 0.8s;
   opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .phone {
+    display: none;
+  }
+}
+
+@media screen and(max-width:767px) {
+  .web {
+    display: none !important;
+  }
+
+  .workshop {
+    .banner {
+      margin-top: 100px;
+    }
+
+    .main-area {
+      .title {
+        margin-top: 3rem;
+      }
+
+      .workshop-content {
+        .text-area {
+          align-items: center;
+          .title-1 {
+            padding-left: 0rem;
+            h4 {
+              font-size: 1rem;
+            }
+          }
+
+          .list {
+            flex-direction: column;
+          }
+
+          .word-box {
+            .word {
+              margin: 1.7rem 0 3rem 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 </style>
