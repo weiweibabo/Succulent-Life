@@ -13,32 +13,29 @@
             <p>
               SUCCUENTS & LIFE <br />IS A PLACE<br />
               WHERE ART AND NATURE<br />
-              COME TOGETHER.
+              COME TOGETHER
             </p>
           </div>
         </div>
         <div class="text-area">
           <p>
-            It all started when Martha Mendoza, a curious creative, figured out <br />how to propagate the only
-            succulent that survived after her first <br />attempt at these little creatures. Let's admit it, we have all
-            killed<br />
-            our first succulent!
+            It all started when Martha Mendoza, a curious creative, figured out how to propagate the only succulent that
+            survived after her first attempt at these little creatures. Let's admit it, we have all killed our first
+            succulent!
           </p>
           <p>
-            Martha's determination to learn how to care for her new succulent<br />
-            babies became a bit of an obsession, and this, mixed with her <br />creative spirit, became Succulents &
-            Life.
+            Martha's determination to learn how to care for her new succulent babies became a bit of an obsession, and
+            this, mixed with her creative spirit, became Succulents & Life.
           </p>
           <p>
-            Every succulent arrangement is carefully planted in curated and <br />repurposed containers to bring the joy
-            of A Succulent Day to<br />
-            everyone in the Boise, Idaho area.
+            Every succulent arrangement is carefully planted in curated and repurposed containers to bring the joy of A
+            Succulent Day to everyone in the Boise, Idaho area.
           </p>
         </div>
       </div>
 
       <!-- infomation web-->
-      <div class="info-area web">
+      <div class="info-area">
         <div class="info">
           <div>
             <span class="green">INFORMATION</span>
@@ -87,7 +84,7 @@
             <span>CONTACT US</span>
           </div>
           <div class="form-area">
-            <div>
+            <div class="web">
               <p>Send us a note to let us know how we can help you.</p>
             </div>
             <form>
@@ -153,7 +150,7 @@ export default {
     // scrollTop
     yyy() {
       let scrollTop = document.documentElement.scrollTop;
-      console.log(scrollTop);
+      // console.log(scrollTop);
 
       // story move-up
       if (scrollTop > 0) {
@@ -268,6 +265,9 @@ export default {
 
       .text-area {
         margin-top: 1.5rem;
+        width: 50%;
+        padding-right: 5rem;
+        padding-left: 3rem;
       }
     }
 
@@ -324,6 +324,15 @@ export default {
   .contact-area {
     transform: translateY(-5rem);
     display: flex;
+
+    .contact {
+      .title {
+        margin-top: 5.5rem;
+        span {
+          margin-left: 0;
+        }
+      }
+    }
 
     .pic {
       width: 40%;
@@ -400,5 +409,81 @@ export default {
 .fix-btn.show {
   transition: 0.8s;
   opacity: 1;
+}
+
+@media (min-width: 768px) {
+  .phone {
+    display: none;
+  }
+}
+
+@media screen and(max-width:767px) {
+  .web {
+    display: none !important;
+  }
+
+  .about {
+    .about-box {
+      width: 100%;
+
+      .title {
+        span {
+          margin-left: 0;
+        }
+      }
+      .story-area {
+        flex-direction: column;
+        align-items: center;
+
+        .flower {
+          width: 90%;
+
+          .story {
+            left: 11rem;
+
+            p {
+              font-size: 1.05rem;
+            }
+          }
+        }
+
+        .text-area {
+          display: flex;
+          flex-direction: column;
+          width: 70%;
+          padding-right: 0;
+          padding-left: 0;
+        }
+      }
+
+      .info-area {
+        flex-direction: column;
+        align-items: center;
+
+        .info {
+          justify-content: center;
+          width: 75%;
+
+          .text-area-2 {
+            margin-right: 0;
+          }
+        }
+
+        .map {
+          iframe {
+            margin-top: 1rem;
+          }
+        }
+      }
+
+      .contact-area {
+        justify-content: center;
+
+        .contact {
+          margin: 0 0;
+        }
+      }
+    }
+  }
 }
 </style>
