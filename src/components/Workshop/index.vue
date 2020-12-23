@@ -53,6 +53,22 @@
               <p>{{ item.date }} <br />{{ item.time }}</p>
             </div>
           </div>
+
+          <transition-group name="fade" v-if="!showMore" class="class-box">
+            <div class="class " v-for="(item, index) in classArr2" :key="index">
+              <div>
+                <router-link to="">
+                  <img :src="require(`@/assets/img/workshop/class2-${index + 1}.png`)" />
+                </router-link>
+              </div>
+              <div>
+                <router-link to="">
+                  <h5>{{ item.title }}</h5>
+                </router-link>
+                <p>{{ item.date }} <br />{{ item.time }}</p>
+              </div>
+            </div>
+          </transition-group>
         </div>
       </div>
       <div class="btn-area">
@@ -88,6 +104,15 @@ export default {
         { title: 'CEMENT POTTING CREAF', date: 'Sunday, November 14, 2020', time: '6:00 PM to 8:00 PM' },
         { title: 'CACTUS JEWELRY HOLDER', date: 'Friday, November 21, 2020', time: '6:00 PM to 8:00 PM' },
       ],
+
+      classArr2: [
+        { title: 'NEUTRAL SUCCULENT GIFT BOX', date: 'Friday, December 04, 2020', time: '6:00 PM to 8:00 PM' },
+        { title: 'SUCCULENT TERRARIUM', date: 'Sunday, December 13, 2020', time: '1:00 PM to 3:00 PM' },
+        { title: 'SUCCULENT FLORAL WORKSHOP', date: 'Friday, December 18, 2020', time: '6:00 PM to 8:00 PM' },
+        { title: 'MOSSBALL WORKSHOP', date: 'Friday, January 01, 2021', time: '2:00 PM to 4:00 PM' },
+        { title: 'DELIGHTFUL FLORAL WORKSHOP', date: 'Sunday, January 03, 2021', time: '1:00 PM to 3:00 PM' },
+        { title: 'CACTUS GINGERBREAD HOUSE', date: 'Friday, January 08, 2021', time: '6:00 PM to 8:00 PM' },
+      ],
     };
   },
   mounted() {
@@ -97,11 +122,6 @@ export default {
     window.removeEventListener('scroll', this.yyy);
   },
   methods: {
-    // view-more-btn
-    // show() {
-    //   showMore = true;
-    // },
-
     // scrollTop
     yyy() {
       let scrollTop = document.documentElement.scrollTop;
@@ -211,6 +231,11 @@ export default {
           }
         }
       }
+
+      .class-box {
+        display: flex;
+        flex-wrap: wrap;
+      }
     }
   }
 
@@ -255,6 +280,15 @@ export default {
 }
 .fix-btn.show {
   transition: 0.8s;
+  opacity: 1;
+}
+
+// view more btn
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 1;
 }
 

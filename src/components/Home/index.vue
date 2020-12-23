@@ -74,7 +74,9 @@
         <div class="cactus cactus-phone">
           <img :src="require('@/assets/img/home/cactus.png')" />
           <div class="btn">
-            <p>GET STARTED</p>
+            <router-link to="/workshop">
+              <p>GET STARTED</p>
+            </router-link>
           </div>
         </div>
         <div class="box-circle-2"></div>
@@ -428,7 +430,7 @@ export default {
 
 @media (min-width: 768px) {
   .phone {
-    display: none;
+    display: none !important;
   }
 }
 
