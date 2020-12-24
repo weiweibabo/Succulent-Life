@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 import Home from '../components/Home'
 import Workshop from '../components/Workshop';
 import About from '../components/About';
+import Product from '../components/Product';
 
 Vue.use(VueRouter);
 
@@ -24,6 +25,11 @@ export default new VueRouter({
       path: '/About',
       name: 'About ',
       component: About,
+    },
+    {
+      path: '/Product',
+      name: 'Product ',
+      component: Product,
     }
   ],
 });

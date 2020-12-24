@@ -8,7 +8,7 @@
           </router-link>
         </div>
         <div class="header-link">
-          <router-link to="/proudct"><div class="pages">PRODUCT</div></router-link>
+          <router-link to="/product"><div class="pages">PRODUCT</div></router-link>
           <router-link to="/workshop"><div class="pages">WORKSHOP</div></router-link>
           <router-link to="/about"><div class="pages">ABOUT</div></router-link>
         </div>
@@ -31,7 +31,7 @@
           <div>
             <ul>
               <li>
-                <router-link to="">
+                <router-link to="/product">
                   <div class="pages">
                     PRODUCT
                   </div>
