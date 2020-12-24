@@ -31,7 +31,7 @@
           <div>
             <ul>
               <li>
-                <router-link to="/proudct">
+                <router-link to="">
                   <div class="pages">
                     PRODUCT
                   </div>
@@ -119,7 +119,7 @@ export default {};
   }
 
   .phone-header {
-    height: 100px;
+    height: 3.3rem;
     width: 100%;
     background: #006737;
     position: relative;
@@ -128,12 +128,12 @@ export default {};
     right: 0;
     z-index: 50;
     .logo {
-      margin: 10px;
+      margin: 6px;
 
       img {
         vertical-align: middle;
-        width: 5rem;
-        height: 5rem;
+        width: 2.6rem;
+        height: 2.6rem;
       }
     }
 
@@ -143,8 +143,8 @@ export default {};
       right: 10px;
       z-index: 52;
       cursor: pointer;
-      width: 80px;
-      height: 80px;
+      width: 2rem;
+      height: 2rem;
       opacity: 0;
     }
 
@@ -185,8 +185,8 @@ export default {};
       top: 10px;
       right: 10px;
       z-index: 50;
-      width: 5rem;
-      height: 5rem;
+      width: 2rem;
+      height: 2rem;
       padding: 1rem;
       display: flex;
       align-items: center;
@@ -195,7 +195,7 @@ export default {};
       div {
         position: relative;
         flex: none;
-        width: 100%;
+        width: 32px;
         height: 2px;
         background: #fff;
         display: flex;
@@ -208,14 +208,14 @@ export default {};
           content: '';
           position: absolute;
           z-index: 1;
-          top: -15px;
+          top: -10px;
           width: 100%;
           height: 2px;
           background: inherit;
         }
 
         &::after {
-          top: 15px;
+          top: 10px;
         }
       }
     }

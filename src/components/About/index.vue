@@ -2,9 +2,6 @@
   <div class="about">
     <div class="about-box">
       <!-- our story -->
-      <div class="title">
-        <span>OUR STORY</span>
-      </div>
 
       <div class="story-area">
         <div>
@@ -20,6 +17,9 @@
           </div>
         </div>
         <div class="text-area">
+          <div class="title">
+            <span>OUR STORY</span>
+          </div>
           <p>
             It all started when Martha Mendoza, a curious creative, figured out how to propagate the only succulent that
             survived after her first attempt at these little creatures. Let's admit it, we have all killed our first
@@ -46,18 +46,18 @@
           <div class="text-area-2">
             <div class="text-s">
               <img :src="require('@/assets/img/about/phone.png')" />
-              <span>&nbsp; +12064523400</span>
+              <span>+12064523400</span>
             </div>
             <div class="text-s">
               <img :src="require('@/assets/img/about/time.png')" />
-              <span
-                >&nbsp; MONDAY－FRIDAY：9AM－9PM<br />
-                &nbsp; SATURDAY－SUNDAY：10AM－10PM</span
+              <span>
+                MON-FRI：9AM-9PM<br />
+                SAT-SUN：10AM-10PM</span
               >
             </div>
             <div class="text-s">
               <img :src="require('@/assets/img/about/location.png')" />
-              <span>&nbsp; 130TH AVE NE #100, BELLEVUE, WA 98005, UNITED STATES</span>
+              <span>130TH AVE NE #100, BELLEVUE, WA 98005</span>
             </div>
           </div>
         </div>
@@ -86,33 +86,29 @@
             <span>CONTACT US</span>
           </div>
           <div class="form-area">
-            <div class="web">
-              <p>Send us a note to let us know how we can help you.</p>
-            </div>
             <form>
               <fieldset>
                 <legend>NAME</legend>
-                <p>
-                  <input type="text" name="firstname" id="firstname" placeholder="First Name" />
-                  <input type="text" name="lastname" id="lastname" placeholder="Last Name" />
+                <p class="name">
+                  <input type="text" placeholder="Your Name" />
                 </p>
               </fieldset>
               <fieldset>
                 <legend>EMAIL</legend>
-                <p>
-                  <input type="text" name="email" id="email" size="44" />
+                <p class="email">
+                  <input type="text" name="email" id="email" />
                 </p>
               </fieldset>
               <fieldset>
-                <legend>PHONE</legend>
-                <p>
-                  <input type="text" name="phone" id="phone" size="30" />
+                <legend>MOBILE</legend>
+                <p class="mobile">
+                  <input type="mobile" name="mobile" id="mobile" />
                 </p>
               </fieldset>
               <fieldset>
                 <legend>SUBJECT</legend>
-                <p>
-                  <input type="text" name="subject" id="subject" size="30" />
+                <p class="subject">
+                  <input type="text" name="subject" id="subject" />
                 </p>
               </fieldset>
               <fieldset>
@@ -121,8 +117,8 @@
                   <textarea
                     name="comment"
                     form="usrform"
-                    style="width:21.5rem;height:7rem;"
                     placeholder="Enter text here..."
+                    style="height:7rem;"
                   ></textarea>
                 </p>
               </fieldset>
@@ -164,14 +160,14 @@ export default {
       }
 
       // map move-up
-      if (scrollTop > 190) {
+      if (scrollTop > 165) {
         document.querySelector('.map').classList.add('move-up');
       } else {
         document.querySelector('.map').classList.remove('move-up');
       }
 
       // pic move-up
-      if (scrollTop > 590) {
+      if (scrollTop > 540) {
         document.querySelector('.pic').classList.add('move-up');
       } else {
         document.querySelector('.pic').classList.remove('move-up');
@@ -201,33 +197,31 @@ export default {
   height: 100%;
 
   .about-box {
-    margin-top: 70px;
+    margin: 70px 2rem 0 2rem;
     max-width: 1200px;
-    margin: 0 auto;
-
-    // story-area
-    .title {
-      width: 100%;
-      height: 4.375rem;
-      text-align: center;
-      margin-top: 9.5rem;
-
-      span {
-        font-size: 2rem;
-        font-weight: 600;
-        color: #006737;
-        border-bottom: 4px solid #006737;
-        margin-left: 14rem;
-      }
-    }
 
     .story-area {
       display: flex;
       justify-content: space-evenly;
 
+      // story-area
+      .title {
+        width: 100%;
+        height: 4.375rem;
+        margin-top: 5.5rem;
+
+        span {
+          font-size: 2rem;
+          font-weight: 600;
+          color: #006737;
+          border-bottom: 4px solid #006737;
+        }
+      }
+
       .flower {
         position: relative;
         width: 28rem;
+        margin-top: 8rem;
 
         .flower-fadein {
           animation-delay: 3s;
@@ -300,7 +294,10 @@ export default {
             display: flex;
             align-items: center;
             img {
-              width: 1.5rem;
+              width: 2.5rem;
+            }
+            span {
+              margin-left: 1rem;
             }
           }
         }
@@ -328,19 +325,26 @@ export default {
   .contact-area {
     transform: translateY(-5rem);
     display: flex;
+    justify-content: space-evenly;
 
     .contact {
+      width: 20rem;
       .title {
         margin-top: 5.5rem;
+        margin-bottom: 2rem;
         span {
           margin-left: 0;
+          font-size: 2rem;
+          font-weight: 600;
+          color: #006737;
+          border-bottom: 4px solid #006737;
         }
       }
     }
 
     .pic {
-      width: 40%;
-      margin: 10rem 3rem;
+      width: 20rem;
+      margin: 10rem 0;
       opacity: 0;
       transform: translateY(14rem);
 
@@ -359,7 +363,6 @@ export default {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      margin: 0 3rem;
 
       legend {
         color: #006737;
@@ -368,10 +371,9 @@ export default {
       }
       input,
       textarea {
-        background: rgba(255, 255, 255, 0.8);
         border: 1.5px solid #006737;
         border-radius: 0.2rem;
-        margin: 0 0.3rem;
+        width: 100%;
       }
 
       .btn {
@@ -383,9 +385,7 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-left: 12rem;
-        margin-top: 1.6rem;
-        margin-bottom: 2rem;
+        margin: 1.6rem auto;
         &:hover {
           border: 0.125rem solid #006737;
           color: #006737;
@@ -482,6 +482,7 @@ export default {
 
         .contact {
           margin: 0 0;
+          width: 13rem;
         }
       }
     }
@@ -496,12 +497,26 @@ export default {
     .about-box {
       .story-area {
         .flower {
-          width: 22rem;
+          width: 20rem;
           .story {
-            left: 9rem;
+            left: 7rem;
             p {
               font-size: 1rem;
             }
+          }
+        }
+      }
+
+      .info-area {
+        .info {
+          .green {
+            font-size: 1.6rem;
+          }
+        }
+
+        .map {
+          iframe {
+            width: 18rem;
           }
         }
       }

@@ -26,9 +26,12 @@
         </div>
         <div class="product-box phone">
           <div class="pic ">
-            <img :src="require(`@/assets/img/home/pro-2-1.jpg`)" />
-            <img :src="require(`@/assets/img/home/pro-5-1.jpg`)" />
-            <img :src="require(`@/assets/img/home/pro-8-1.jpg`)" />
+            <img :src="require(`@/assets/img/home/pro-9-1.jpg`)" />
+            <p>HOUSE OF GLASS MOSAIC</p>
+            <img :src="require(`@/assets/img/home/pro-6-1.jpg`)" />
+            <p>FUJI HILL POTTED PLANT</p>
+            <img :src="require(`@/assets/img/home/pro-3-1.jpg`)" />
+            <p>GEOMETRIC CACTUS POT</p>
           </div>
         </div>
       </div>
@@ -70,22 +73,25 @@
           for the class and tables, then just leave the rest up to us !
         </p>
       </div>
-      <div class="box-2">
-        <div class="cactus cactus-phone">
-          <img :src="require('@/assets/img/home/cactus.png')" />
-          <div class="btn">
-            <router-link to="/workshop">
-              <p>GET STARTED</p>
-            </router-link>
+      <div class="cactus-area">
+        <div class="cactus-center">
+          <div class="box-2"></div>
+          <div class="box-circle-2"></div>
+          <div class="cactus">
+            <img :src="require('@/assets/img/home/cactus.png')" />
           </div>
         </div>
-        <div class="box-circle-2"></div>
+        <div class="btn">
+          <router-link to="/workshop">
+            <p>GET STARTED</p>
+          </router-link>
+        </div>
       </div>
     </div>
 
-    <div class="main-area workshop-pic">
-      <div class="pic-area">
-        <img :src="require('@/assets/img/home/workshop-1.jpg')" class="web" />
+    <div class="main-area workshop-pic web">
+      <div class="pic-area ">
+        <img :src="require('@/assets/img/home/workshop-1.jpg')" />
         <img :src="require('@/assets/img/home/workshop-2.jpg')" />
         <img :src="require('@/assets/img/home/workshop-3.jpg')" />
         <img :src="require('@/assets/img/home/workshop-4.jpg')" />
@@ -154,17 +160,23 @@ export default {
 
       // workshop-text(HAVE FUN...)
 
-      if (scrollTop > 1830) {
+      if (scrollTop > 1840) {
         document.querySelector('.text').classList.add('move-up');
       } else {
         document.querySelector('.text').classList.remove('move-up');
       }
 
       // workshop-cactus&btn
-      if (scrollTop > 2130) {
+      if (scrollTop > 1910) {
         document.querySelector('.cactus').classList.add('move-up');
       } else {
         document.querySelector('.cactus').classList.remove('move-up');
+      }
+
+      if (scrollTop > 1910) {
+        document.querySelector('.btn').classList.add('move-up');
+      } else {
+        document.querySelector('.btn').classList.remove('move-up');
       }
 
       // fixed-btn arrow up
@@ -185,149 +197,190 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  padding-top: 70px;
-}
-// banner-area
-.banner {
-  img {
+  // banner-area
+  .banner {
+    img {
+      width: 100%;
+      margin-top: 4.375rem;
+    }
+  }
+
+  // main-area
+  .main-area {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  // product-area
+  .title {
     width: 100%;
-  }
-}
-// main-area
-.main-area {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-// product-area
-.title {
-  width: 100%;
-  height: 4.375rem;
-  font-weight: 600;
-  text-align: center;
-  margin-top: 3.125rem;
-  margin-bottom: 1rem;
-  span {
-    font-size: 2rem;
+    height: 4.375rem;
     font-weight: 600;
-    color: #006737;
-    border-bottom: 4px solid #b0d8bf;
-  }
-}
-
-.product-area {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  .product-box {
-    display: flex;
-
-    .pic {
-      display: flex;
-      position: relative;
-      font-size: 0px;
-      cursor: pointer;
-      &:hover {
-        font-size: 20px;
-      }
-
-      img {
-        width: 100%;
-        &:hover {
-          transition: 0.5s;
-          box-shadow: 2px 2px 8px rgb(148, 148, 148);
-          filter: brightness(80%);
-        }
-      }
-      .viewmore {
-        position: absolute;
-        top: 48%;
-        left: 35%;
-        opacity: 1;
-        color: #fff;
-      }
-    }
-  }
-}
-
-// blog-area
-.blog-area {
-  width: 100%;
-  background: #b0d8bf;
-  cursor: grab;
-}
-
-// workshop-area
-.workshop-area {
-  display: flex;
-
-  .box-1 {
-    position: relative;
-    width: 17.5rem;
-    height: 17.5rem;
-    border-radius: 50%;
-    background: #b0d8bf;
-    top: 3.75rem;
-
-    .text {
-      position: absolute;
-
-      .text-area {
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: #006737;
-        margin-top: 4.375rem;
-        transform: translate(5rem, 7.25rem);
-        text-align: center;
-      }
-    }
-    // scroll-event
-    .text.move-up {
-      transition: 0.8s ease-out;
-      transform: translateY(-7.5rem);
-    }
-
-    .box-circle-1 {
-      position: absolute;
-      width: 16.875rem;
-      height: 16.875rem;
-      border-radius: 50%;
-      border: 0.187rem solid #006737;
-      transform: translate(2.5rem, 0.312rem);
-    }
-  }
-
-  .content {
-    font-size: 1.1rem;
-    width: 32%;
-    margin-top: 15rem;
-    margin-left: 5rem;
-
-    .workshop span {
-      font-size: 1.875rem;
+    text-align: center;
+    margin-top: 3.125rem;
+    margin-bottom: 1rem;
+    span {
+      font-size: 2rem;
       font-weight: 600;
       color: #006737;
       border-bottom: 4px solid #b0d8bf;
     }
   }
 
-  .box-2 {
-    position: relative;
-    width: 10.62rem;
-    height: 10.62rem;
-    border-radius: 50%;
-    background: #b0d8bf;
-    top: 10rem;
-    transform: translateX(2rem);
+  .product-area {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 
-    .cactus {
-      position: absolute;
-      transition: 0.8s ease-out;
-      z-index: 2;
-      img {
-        width: 14.37rem;
-        margin-top: 9rem;
-        margin-left: 4rem;
+    .product-box {
+      display: flex;
+
+      .pic {
+        display: flex;
+        position: relative;
+        font-size: 0px;
+        cursor: pointer;
+        &:hover {
+          font-size: 20px;
+        }
+
+        img {
+          width: 100%;
+          &:hover {
+            transition: 0.5s;
+            box-shadow: 2px 2px 8px rgb(148, 148, 148);
+            filter: brightness(80%);
+          }
+        }
+        .viewmore {
+          position: absolute;
+          top: 48%;
+          left: 35%;
+          opacity: 1;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  // blog-area
+  .blog-area {
+    width: 100%;
+    background: #b0d8bf;
+    cursor: grab;
+  }
+
+  // workshop-area
+  .workshop-area {
+    display: flex;
+    justify-content: center;
+
+    .box-1 {
+      position: relative;
+      width: 17.5rem;
+      height: 17.5rem;
+      border-radius: 50%;
+      background: #b0d8bf;
+      top: 3.75rem;
+      margin-left: 0.5rem;
+
+      .text {
+        position: absolute;
+
+        .text-area {
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: #006737;
+          margin-top: 4.375rem;
+          transform: translate(5rem, 7.25rem);
+          text-align: center;
+        }
+      }
+      // scroll-event
+      .text.move-up {
+        transition: 0.8s ease-out;
+        transform: translateY(-7.5rem);
+      }
+
+      .box-circle-1 {
+        position: absolute;
+        width: 16.875rem;
+        height: 16.875rem;
+        border-radius: 50%;
+        border: 0.187rem solid #006737;
+        top: 0.312rem;
+        left: 2.5rem;
+      }
+    }
+
+    .content {
+      font-size: 1.1rem;
+      width: 32%;
+      margin-top: 15rem;
+      margin-left: 3rem;
+
+      .workshop span {
+        font-size: 1.875rem;
+        font-weight: 600;
+        color: #006737;
+        border-bottom: 4px solid #b0d8bf;
+      }
+    }
+
+    .cactus-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 38%;
+      height: 100%;
+      margin-top: 2rem;
+
+      .cactus-center {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 13.8125rem;
+        height: 30rem;
+        margin-top: 3rem;
+
+        .box-2 {
+          position: absolute;
+          width: 10rem;
+          height: 10rem;
+          border-radius: 50%;
+          background: #b0d8bf;
+          top: 0;
+          left: -4rem;
+          transform: translateX(2rem);
+          // scroll-event
+        }
+
+        .box-circle-2 {
+          position: absolute;
+          width: 11rem;
+          height: 11rem;
+          border-radius: 50%;
+          border: 0.187rem solid #006737;
+          top: -2rem;
+          left: 4rem;
+        }
+
+        .cactus {
+          position: absolute;
+          transition: 0.8s ease-out;
+          z-index: 2;
+
+          img {
+            width: 13.37rem;
+            margin-top: 9rem;
+          }
+        }
+
+        .cactus.move-up {
+          transition: 0.8s ease-out;
+          transform: translateY(-6.25rem);
+        }
       }
 
       .btn {
@@ -339,46 +392,37 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-left: 6.5rem;
-        margin-top: 1.6rem;
+
         p {
           margin-top: 1.25rem;
         }
+
         &:hover {
           color: #006737;
           background: #fff;
         }
       }
-    }
-    // scroll-event
-    .cactus.move-up {
-      transition: 0.8s ease-out;
-      transform: translateY(-6.25rem);
+
+      .btn.move-up {
+        transition: 0.8s ease-out;
+        transform: translateY(-6.25rem);
+      }
     }
   }
 
-  .box-circle-2 {
-    position: absolute;
-    width: 15rem;
-    height: 15rem;
-    border-radius: 50%;
-    border: 0.187rem solid #006737;
-    transform: translate(8.5rem, -3rem);
-  }
-}
-
-.workshop-pic {
-  margin: 3rem auto;
-  display: flex;
-  justify-content: center;
-
-  .pic-area {
+  .workshop-pic {
+    margin: 3rem auto;
     display: flex;
     justify-content: center;
 
-    img {
-      width: 23%;
-      margin: 0.5rem;
+    .pic-area {
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 23%;
+        margin: 0.5rem;
+      }
     }
   }
 }
@@ -428,6 +472,54 @@ export default {
   margin-top: 1.125rem;
 }
 
+@media (min-width: 768px) and (max-width: 1130px) {
+  .phone {
+    display: none !important;
+  }
+
+  .product-area {
+    .product-box {
+      width: 33%;
+      .pic {
+        width: 100%;
+      }
+    }
+  }
+
+  .workshop-area {
+    .box-1 {
+      width: 12.5rem;
+      height: 12.5rem;
+
+      .text {
+        .text-area {
+          font-size: 1.1rem;
+          margin-top: 3.4rem;
+        }
+      }
+
+      .box-circle-1 {
+        width: 12.5rem;
+        height: 12.5rem;
+        top: 0;
+      }
+    }
+
+    .box-2 {
+      width: 6.62rem;
+      height: 6.62rem;
+
+      .box-circle-2 {
+        position: absolute;
+        width: 10rem;
+        height: 10rem;
+        top: -2rem;
+        left: 4rem;
+      }
+    }
+  }
+}
+
 @media (min-width: 768px) {
   .phone {
     display: none !important;
@@ -441,18 +533,29 @@ export default {
 
   .home {
     .banner {
-      margin-top: 30px;
+      img {
+        margin-top: 3.3rem;
+      }
     }
 
     // product-area
     .product-area {
       .product-box {
         .pic {
+          color: #006737;
+          font-size: 1.2rem;
+          text-align: center;
           display: flex;
           flex-direction: column;
           padding: 1rem;
+          width: 20rem;
           img {
+            width: 100%;
             margin: 0.6rem 0;
+          }
+
+          p {
+            margin-top: 1rem;
           }
         }
       }
@@ -462,6 +565,7 @@ export default {
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-top: 2rem;
 
       .box-1 {
         left: -1rem;
@@ -484,19 +588,12 @@ export default {
           img {
             width: 14.37rem;
             margin-top: 9rem;
-            margin-left: 4rem;
+            margin-left: 3rem;
           }
-        }
-      }
-    }
 
-    // last-section
-    .workshop-pic {
-      .pic-area {
-        margin-top: 20rem;
-        img {
-          width: 30%;
-          margin: 0.2rem;
+          .btn {
+            margin-left: 5.5rem;
+          }
         }
       }
     }

@@ -31,7 +31,7 @@
               <li>and more!</li>
             </ul>
           </div>
-          <div class="word-box">
+          <div class="word-box web">
             <p class="word">
               We will happily tailor the experience to fit your theme, environment or time constraints.
             </p>
@@ -305,7 +305,7 @@ export default {
 
   .workshop {
     .banner {
-      margin-top: 100px;
+      margin-top: 3.3rem;
     }
 
     .main-area {
@@ -331,6 +331,33 @@ export default {
             .word {
               margin: 1.7rem 0 3rem 1rem;
             }
+          }
+        }
+      }
+      .class-area {
+        margin-top: 2rem;
+
+        .class-info {
+          .class {
+            width: 90%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width:376px) {
+  .web {
+    display: none !important;
+  }
+
+  .main-area {
+    .class-area {
+      .class-info {
+        .class {
+          h5 {
+            font-size: 1.05rem;
           }
         }
       }

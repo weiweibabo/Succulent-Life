@@ -8,12 +8,12 @@
       <div class="footer-info">
         <div class="info-area">
           <div class="footer-text">
-            <span><router-link to="">CONTACT US</router-link></span>
+            <span><router-link to="/About">CONTACT US</router-link></span>
             <span><router-link to="">SPECIAL EVENTS</router-link></span>
             <span><router-link to="">PRIVACY POLICY</router-link></span>
           </div>
           <div class="footer-text">
-            <span><router-link to="">ABOUT</router-link></span>
+            <span><router-link to="/About">ABOUT</router-link></span>
             <span><router-link to="">FAQ</router-link></span>
             <span><router-link to="">JOIN US</router-link></span>
           </div>
@@ -23,16 +23,6 @@
           <router-link to=""><img :src="require('@/assets/img/footer/Instagram.svg')"/></router-link>
           <router-link to=""><img :src="require('@/assets/img/footer/twitter.svg')"/></router-link>
           <router-link to=""><img :src="require('@/assets/img/footer/email.svg')"/></router-link>
-        </div>
-      </div>
-
-      <div class="location web">
-        <div>
-          <p class="title-s">• LOCATION：</p>
-          <p class="gray">2375 130TH AVE NE #100, BELLEVUE, WA 98005, UNITED STATES</p>
-          <P class="title-s">• OPENING HOURS：</P>
-          <p class="gray">MONDAY－FRIDAY：9AM－9PM</p>
-          <p class="gray">SATURDAY－SUNDAY：10AM－10PM</p>
         </div>
       </div>
     </div>
@@ -59,11 +49,12 @@ export default {};
 
   .footer-box {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     padding: 0 5rem;
 
     .logo-big {
       padding: 2rem 0 2rem 0;
+      margin: 0 1rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -152,6 +143,19 @@ export default {};
   }
   .info-area {
     justify-content: center;
+  }
+}
+
+@media screen and(max-width:414px) {
+  .web {
+    display: none !important;
+  }
+  .footer {
+    .c-area {
+      p {
+        font-size: 0.7rem;
+      }
+    }
   }
 }
 </style>

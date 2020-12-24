@@ -72,53 +72,125 @@ export default {
   /deep/.swiper-pagination-bullet-active {
     background: #006737;
   }
-}
+  .swiper-slide {
+    width: 372px !important;
+    height: 360px !important;
+    margin: 3rem 1.5rem 2.6rem 1.5rem;
 
-.swiper-slide {
-  width: 372px !important;
-  height: 360px !important;
-  margin: 3rem 1.5rem 2.6rem 1.5rem;
-}
+    .article {
+      display: flex;
+      flex-direction: column;
+      box-shadow: 3px 3px 10px rgb(148, 148, 148);
+      text-align: center;
 
-.article {
-  display: flex;
-  flex-direction: column;
-  box-shadow: 3px 3px 10px rgb(148, 148, 148);
-  text-align: center;
+      &:hover {
+        margin: 1.562rem 0;
+        color: #fff;
+        transition: 0.5s;
+      }
 
-  &:hover {
-    margin: 1.562rem 0;
-    color: #fff;
-    transition: 0.5s;
-  }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin-bottom: 1.2rem;
 
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    margin-bottom: 1.2rem;
+        &:hover {
+          filter: brightness(80%);
+          transition: 0.5s;
+        }
+      }
 
-    &:hover {
-      filter: brightness(80%);
-      transition: 0.5s;
+      span {
+        border-bottom: 2px solid #006737;
+        margin: 1.562rem 0;
+        color: #006737;
+        font-weight: 600;
+        font-size: 1.25rem;
+      }
+
+      p {
+        color: #fff;
+        font-size: 1rem;
+        line-height: 1.2rem;
+        padding: 0.2rem;
+        text-align: center;
+        margin-top: 0.7rem;
+      }
     }
   }
+}
 
-  span {
-    border-bottom: 2px solid #006737;
-    margin: 1.562rem 0;
-    color: #006737;
-    font-weight: 600;
-    font-size: 1.25rem;
+@media screen and(max-width:767px) {
+  .web {
+    display: none !important;
   }
 
-  p {
-    color: #fff;
-    font-size: 1rem;
-    line-height: 1.2rem;
-    padding: 0.2rem;
-    text-align: center;
-    margin-top: 0.7rem;
+  .swiper {
+    .swiper-slide {
+      .article {
+        &:hover {
+          margin: 0;
+          color: #fff;
+          transition: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and(max-width:414px) {
+  .web {
+    display: none !important;
+  }
+
+  .swiper {
+    display: flex;
+
+    /deep/.swiper-pagination-bullet-active {
+      background: #006737;
+    }
+    .swiper-slide {
+      width: 310px !important;
+      height: 330px !important;
+      margin: 3rem 1.5rem 2.6rem 1.5rem;
+
+      .article {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 3px 3px 10px rgb(148, 148, 148);
+        text-align: center;
+
+        &:hover {
+          margin: 0;
+          color: #fff;
+          transition: none;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          margin-bottom: 1.2rem;
+
+          &:hover {
+            filter: brightness(80%);
+            transition: 0.5s;
+          }
+        }
+
+        span {
+          margin: 1.562rem 0;
+
+          font-size: 1rem;
+        }
+
+        p {
+          font-size: 0.8rem;
+          line-height: 1rem;
+        }
+      }
+    }
   }
 }
 </style>
