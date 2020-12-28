@@ -397,10 +397,10 @@ export default {
           margin-top: 1.25rem;
         }
 
-        &:hover {
-          color: #006737;
-          background: #fff;
-        }
+        // &:hover {
+        //   color: #006737 !important ;
+        //   background: #fff;
+        // }
       }
 
       .btn.move-up {

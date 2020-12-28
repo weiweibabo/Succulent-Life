@@ -42,6 +42,7 @@ export default {
 
 a {
   color: #fff !important;
+  text-decoration: none !important;
   &:hover {
     text-decoration: none !important;
   }

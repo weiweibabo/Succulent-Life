@@ -28,10 +28,10 @@
     </div>
 
     <div class="c-area web">
-      <p>© COPYRIGHTS 2020 SUCCUCENTS & LIFE. All RIGHTS RESERVED.</p>
+      <p>© COPYRIGHTS 2020 SUCCULENTS & LIFE. All RIGHTS RESERVED.</p>
     </div>
     <div class="c-area phone">
-      <p>© COPYRIGHTS 2020 SUCCUCENTS & LIFE.</p>
+      <p>© COPYRIGHTS 2020 SUCCULENTS & LIFE.</p>
     </div>
   </div>
 

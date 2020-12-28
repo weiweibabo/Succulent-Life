@@ -18,6 +18,11 @@
         </div>
       </div>
     </div>
+
+    <!-- fix button -->
+    <div class="fix-btn" @click="scrollToTop()">
+      <img :src="require('@/assets/img/arrow-up-btn/Arrow-gray.svg')" />
+    </div>
   </div>
 </template>
 
@@ -48,6 +53,31 @@ export default {
         { title: 'MEDITERRANEAN STYLE POT', price: '590' },
       ],
     };
+  },
+  mounted() {
+    window.addEventListener('scroll', this.yyy, true);
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.yyy);
+  },
+  methods: {
+    // scrollTop
+    yyy() {
+      let scrollTop = document.documentElement.scrollTop;
+      // console.log(scrollTop);
+
+      // fixed-btn arrow up
+      if (scrollTop > 160) {
+        document.querySelector('.fix-btn').classList.add('show');
+      } else {
+        document.querySelector('.fix-btn').classList.remove('show');
+      }
+    },
+
+    // 返回最上面
+    scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    },
   },
 };
 </script>
@@ -124,6 +154,21 @@ export default {
         }
       }
     }
+  }
+
+  // fix-btn arrow-up
+  .fix-btn {
+    width: 2.2rem;
+    position: fixed;
+    top: 90%;
+    right: 0.8rem;
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
+  }
+  .fix-btn.show {
+    transition: 0.8s;
+    opacity: 1;
   }
 }
 </style>
